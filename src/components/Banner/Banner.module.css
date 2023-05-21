@@ -1,0 +1,20 @@
+.banner {
+  background: #242424;
+  background-image: url("../../img/banner2.jpg");
+  background-size: 60%;
+  background-repeat: no-repeat;
+  color: #FEF9F2;
+  padding: 200px 85px;
+}
+
+.banner__title {
+  font-size: 50px;
+  font-weight: 300;
+}
+
+.banner__highlight {
+  font-size: 90px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 30px;
+}

@@ -1,0 +1,16 @@
+.features {
+  padding: 40px 85px;
+}
+
+.features__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+.features__text {
+  max-width: 800px;
+  font-size: 26px;
+  font-weight: 300;
+}
