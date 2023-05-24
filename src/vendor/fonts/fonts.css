@@ -33,3 +33,15 @@
   font-weight: 700;
   src: url(Roboto-Black.woff2) format('woff2');
 }
+
+@font-face {
+  font-family: Rubik;
+  font-weight: 500;
+  src: url(Rubik-Medium.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: Rubik;
+  font-weight: 700;
+  src: url(Rubik-Bold.woff2) format('woff2');
+}

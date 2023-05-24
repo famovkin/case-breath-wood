@@ -1,4 +1,5 @@
 .banner {
+  width: 100%;
   background-image: url('../../img/banner.jpg');
   background-position: center;
   padding: 100px 85px;
