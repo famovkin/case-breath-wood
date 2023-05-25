@@ -22,3 +22,35 @@
   text-transform: uppercase;
   line-height: 30px;
 }
+
+@media (max-width: 1024px) {
+  .banner {
+    text-align: center;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .banner__logo {
+    width: 65%;
+  }
+  .banner__title {
+    font-size: 80px;
+  }
+  .banner__subtitle {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding: 30px;
+  }
+  .banner__title {
+    font-size: 50px;
+  }
+  .banner__subtitle {
+    font-size: 20px;
+  }
+}

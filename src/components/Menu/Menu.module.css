@@ -11,6 +11,11 @@
   transition: all 0.4s ease-in-out;
 }
 
+.menu_opened {
+  opacity: 1;
+  pointer-events: unset;
+}
+
 .menu__container {
   padding: 25px 15px;
   background-color: #fff;
@@ -18,23 +23,21 @@
   top: 0;
   right: 0;
   bottom: 0;
-  width: 40%;
+  width: 200px;
   height: 100vh;
   transform: translateX(100%);
   transition: all 0.4s ease-in-out;
 }
 
-.menu_opened {
-  opacity: 1;
-  pointer-events: unset;
-}g
-
-.ewwg {
+.menu__container_opened {
   transform: translateX(0%);
   opacity: 1;
 }
 
-.nav_horizontal ul {
+.nav_vertical ul {
+  padding-top: 30px;
   flex-direction: column;
+  display: flex;
   gap: 30px;
+  text-align: center;
 }

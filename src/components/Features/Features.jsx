@@ -16,7 +16,7 @@ function Features() {
         <img className={styles.features__img} src={table} alt="Стол" />
       </div>
       <div className={styles.features__item}>
-        <img className={styles.features__item} src={dresser1} alt="Стол" />
+        <img className={styles.features__img} src={dresser1} alt="Стол" />
         <p className={styles.features__text}>
           Работаем с заказами любой сложности.
           <br />
@@ -29,7 +29,7 @@ function Features() {
           К работе подходим очень щепетильно и стараемся сделать максимально
           качественно, учитывая все пожелания заказчика.
         </p>
-        <img className={styles.features__item} src={dresser2} alt="Стол" />
+        <img className={styles.features__img} src={dresser2} alt="Стол" />
       </div>
     </section>
   );

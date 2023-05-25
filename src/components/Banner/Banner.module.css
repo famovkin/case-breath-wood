@@ -1,9 +1,9 @@
 .banner {
   background: #242424;
-  background-image: url("../../img/banner2.jpg");
+  background-image: url('../../img/banner2.jpg');
   background-size: 60%;
   background-repeat: no-repeat;
-  color: #FEF9F2;
+  color: #fef9f2;
   padding: 200px 85px;
 }
 
@@ -17,4 +17,32 @@
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 30px;
+}
+
+@media (max-width: 1024px) {
+  .banner {
+    background-size: cover;
+    padding: 150px 50px;
+  }
+  .banner__title {
+    font-size: 40px;
+    max-width: 90%;
+  }
+
+  .banner__highlight {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding: 130px 30px;
+  }
+  .banner__title {
+    max-width: 100%;
+    font-size: 30px;
+  }
+  .banner__highlight {
+    font-size: 37px;
+  }
 }

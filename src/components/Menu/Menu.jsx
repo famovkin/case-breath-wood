@@ -1,25 +1,33 @@
 import cx from 'classnames';
 import styles from './Menu.module.css';
 
+import NavItem from '../NavItem/NavItem';
+
+const navItems = [
+  { title: 'О нас' },
+  { title: 'Наши работы' },
+  { title: 'Отзывы' },
+  { title: 'Контакты' },
+];
+
 function Menu({ isMenuOpened, setIsMenuOpened }) {
   return (
     <div
       className={cx(styles.menu, {
-        menu_opened: isMenuOpened,
+        [styles.menu_opened]: isMenuOpened,
       })}
       onClick={() => setIsMenuOpened(false)}
     >
       <div
         className={cx(styles.menu__container, {
-          menu__container_opened: isMenuOpened,
+          [styles.menu__container_opened]: isMenuOpened,
         })}
       >
-        <nav className={styles.nav_horizontal}>
+        <nav className={styles.nav_vertical}>
           <ul>
-            <li className="nav__item">О нас</li>
-            <li className="nav__item">Наши работы</li>
-            <li className="nav__item">Отзывы</li>
-            <li className="nav__item">Контакты</li>
+            {navItems.map((navElem, index) => (
+              <NavItem key={index} text={navElem.title} />
+            ))}
           </ul>
         </nav>
       </div>
