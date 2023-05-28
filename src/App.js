@@ -4,6 +4,7 @@ import Menu from './components/Menu/Menu';
 import Nav from './components/Nav/Nav';
 import Banner from './components/Banner/Banner';
 import Products from './components/Products/Products';
+import Works from './components/Works/Works';
 
 import './App.css';
 import logo from './img/logo.png';
@@ -33,6 +34,7 @@ function App() {
       <Features />
       <Banner />
       <Products />
+      <Works />
     </div>
   );
 }

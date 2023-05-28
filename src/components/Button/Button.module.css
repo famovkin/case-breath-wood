@@ -18,3 +18,12 @@
 .button:hover{
   transform: scale(1.05);
 }
+
+.button_big {
+  font-size: 32px;
+  padding: 28px 37px;
+  line-height: 30px;
+  border-radius: 40px;
+  font-weight: 400;
+}
+
