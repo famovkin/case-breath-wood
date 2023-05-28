@@ -12,6 +12,7 @@ import logo from './img/logo.png';
 import burger from './img/burger.png';
 import { useState } from 'react';
 import styles from './components/Nav/Nav.module.css';
+import Feedback from './components/Feedback/Feedback';
 function App() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
 
@@ -35,6 +36,7 @@ function App() {
       <Banner />
       <Products />
       <Works />
+      <Feedback />
     </div>
   );
 }

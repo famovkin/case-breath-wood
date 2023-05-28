@@ -6,10 +6,10 @@ import styles from './Nav.module.css';
 
 // Вынести?
 const navItems = [
-  { title: 'О нас' },
-  { title: 'Наши работы' },
-  { title: 'Отзывы' },
-  { title: 'Контакты' },
+  { title: 'О нас', link: '#about'},
+  { title: 'Наши работы', link: '#works'},
+  { title: 'Отзывы', link: "#feed"},
+  { title: 'Контакты', link: "#contacts"},
 ];
 
 function Nav({ mod }) {
@@ -22,7 +22,7 @@ function Nav({ mod }) {
       >
         <ul>
           {navItems.map((navElem, index) => (
-            <NavItem key={index} text={navElem.title} />
+            <NavItem key={index} text={navElem.title} link={navElem.link}/>
           ))}
         </ul>
       </nav>

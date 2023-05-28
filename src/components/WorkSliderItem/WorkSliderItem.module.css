@@ -1,7 +1,10 @@
-.itemSlider {
-  width: 200%;
+.itemSlider__image {
+  height: 100%;
+  display: inline-block;
 }
 
-.itemSlider__image{
+.itemSlider__container {
+  border-radius: 10px;
   height: 100%;
+  overflow: hidden;
 }

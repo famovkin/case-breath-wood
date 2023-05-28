@@ -6,7 +6,7 @@ function Button({ text, mod }) {
   return (
     <button
       className={cx(styles.button, {
-        [styles.button_big]: mod,
+        [mod]: mod,
       })}
     >
       {text}
