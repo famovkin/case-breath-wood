@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/case-breath-wood/static/css/main.822572f6.css",
-    "main.js": "/case-breath-wood/static/js/main.b5e7bafc.js",
+    "main.js": "/case-breath-wood/static/js/main.98da8521.js",
     "static/media/banner2.jpg": "/case-breath-wood/static/media/banner2.0dce1a5e07e1f5edd376.jpg",
     "static/media/banner.jpg": "/case-breath-wood/static/media/banner.73c0ddadcb802a8d6fd0.jpg",
     "static/media/preview.jpg": "/case-breath-wood/static/media/preview.618e0d85f010cf1d5afa.jpg",
@@ -20,10 +20,10 @@
     "static/media/logo-white.png": "/case-breath-wood/static/media/logo-white.488aa3e38eb3316f7ca1.png",
     "index.html": "/case-breath-wood/index.html",
     "main.822572f6.css.map": "/case-breath-wood/static/css/main.822572f6.css.map",
-    "main.b5e7bafc.js.map": "/case-breath-wood/static/js/main.b5e7bafc.js.map"
+    "main.98da8521.js.map": "/case-breath-wood/static/js/main.98da8521.js.map"
   },
   "entrypoints": [
     "static/css/main.822572f6.css",
-    "static/js/main.b5e7bafc.js"
+    "static/js/main.98da8521.js"
   ]
 }
