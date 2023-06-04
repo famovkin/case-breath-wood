@@ -31,7 +31,7 @@ function Menu({ isMenuOpened, setIsMenuOpened }) {
           </ul>
         </nav>
         <a className={styles.menu__phone} href="tel:+79998887766">
-          +7 (904) 657-32-60
+          +7 (961) 252-18-19
         </a>
         <Button mod={styles.menu__btn} text="Заказать звонок" />
       </div>

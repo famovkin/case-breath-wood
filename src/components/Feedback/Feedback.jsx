@@ -7,10 +7,13 @@ import arrowLeft from '../../img/arrow-left.png';
 import arrowRight from '../../img/arrow-right.png';
 
 import Comment from '../Comment/Comment';
+import Title from '../Title/Title';
+
+const BASE_URL = 'https://famovkin.github.io/case-breath-wood/';
 
 const comments = [
   {
-    avatar: '/avatar.jpeg',
+    avatar: `${BASE_URL}/avatar_1.jpg`,
     name: 'Евгений',
     text: `Заказывали в данной мастерской такую кроватку.
     </br>
@@ -21,7 +24,7 @@ const comments = [
   Еще раз большое спасибо!`,
   },
   {
-    avatar: '/avatar.jpeg',
+    avatar: `${BASE_URL}/avatar_2.jpg`,
     name: 'Виктория',
     text: `Очень качественная кровать-домик, как раз подходит мне по размерам и габаритам. Кровать из натурального дерева, устойчивая и прочная.
     </br>
@@ -29,27 +32,27 @@ const comments = [
   Довольна покупкой, спасибо!`,
   },
   {
-    avatar: '/avatar.jpeg',
+    avatar: `${BASE_URL}/avatar_1.jpg`,
     name: 'Евгений',
     text: `Заказывали в данной мастерской такую кроватку.
   Изготовление заняло примерно недели 3, но оно того стоило! качество очень хорошее, нам очень понравилось, все доходчиво объяснили, как если что разбирать и собирать, сборка и установка бесплатная. Однозначно рекомендую!
   Еще раз большое спасибо!`,
   },
   {
-    avatar: '/avatar.jpeg',
+    avatar: `${BASE_URL}/avatar_2.jpg`,
     name: 'Виктория',
     text: `Очень качественная кровать-домик, как раз подходит мне по размерам и габаритам. Кровать из натурального дерева, устойчивая и прочная.
   Довольна покупкой, спасибо!`,
   },
   {
-    avatar: '/avatar.jpeg',
+    avatar: `${BASE_URL}/avatar_1.jpg`,
     name: 'Евгений',
     text: `Заказывали в данной мастерской такую кроватку.
   Изготовление заняло примерно недели 3, но оно того стоило! качество очень хорошее, нам очень понравилось, все доходчиво объяснили, как если что разбирать и собирать, сборка и установка бесплатная. Однозначно рекомендую!
   Еще раз большое спасибо!`,
   },
   {
-    avatar: '/avatar.jpeg',
+    avatar: `${BASE_URL}/avatar_2.jpg`,
     name: 'Виктория',
     text: `Очень качественная кровать-домик, как раз подходит мне по размерам и габаритам. Кровать из натурального дерева, устойчивая и прочная.
   Довольна покупкой, спасибо!`,
@@ -113,7 +116,7 @@ function Feedback() {
   return (
     <section className={styles.feedback} id="feed">
       <div className={styles.feedback__header}>
-        <h2 className={styles.feedback__title}>Отзывы о нас</h2>
+        <Title text="Отзывы о нас"/>
         <div className={styles.feedback__arrows}>
           <img
             className={cx(styles.feedback__arrow, {

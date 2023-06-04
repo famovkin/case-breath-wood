@@ -10,6 +10,7 @@ function WorkSliderItem({ img, width, itemsInSlider }) {
           alt="Пример работы"
           style={{
             width: width / itemsInSlider - 30,
+            height: width / itemsInSlider - 30,
           }}
         />
       </div>

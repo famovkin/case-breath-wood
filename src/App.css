@@ -1,10 +1,16 @@
 .header {
+  position: fixed;
+  background: #fff;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 85px;
   gap: 5%;
+  -webkit-box-shadow: 1px 11px 15px 3px rgba(0, 0, 0, 0.37);
+  -moz-box-shadow: 1px 11px 15px 3px rgba(0, 0, 0, 0.37);
+  box-shadow: 1px 11px 15px 3px rgba(0, 0, 0, 0.37);
+  z-index: 2;
 }
 
 .header__logo {

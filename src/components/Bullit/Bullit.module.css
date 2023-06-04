@@ -1,0 +1,9 @@
+.bullit {
+  display: flex;
+  gap: 17px;
+}
+
+.bullit__txt {
+  color: #fff;
+  font-size: 16px;
+}

@@ -5,6 +5,7 @@
   background-repeat: no-repeat;
   color: #fef9f2;
   padding: 200px 85px;
+  scroll-behavior: smooth;
 }
 
 .banner__title {

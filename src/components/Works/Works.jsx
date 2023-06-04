@@ -7,22 +7,29 @@ import styles from './Works.module.css';
 import preview from '../../img/preview.jpg';
 import WorkSliderItem from '../WorkSliderItem/WorkSliderItem';
 
+const BASE_URL = 'https://famovkin.github.io/case-breath-wood/';
+
 const workImages = [
-  '/wood_1.jpg',
-  '/wood_1.jpg',
-  '/wood_1.jpg',
-  '/wood_1.jpg',
-  '/wood_1.jpg',
-  '/wood_1.jpg',
-  '/wood_1.jpg',
-  '/wood_1.jpg',
-  '/wood_1.jpg',
-  '/wood_1.jpg',
-  '/wood_1.jpg',
-  '/wood_1.jpg',
-  '/wood_1.jpg',
-  '/wood_1.jpg',
-  '/wood_1.jpg',
+  `${BASE_URL}wood_1.jpg`,
+  `${BASE_URL}wood_2.jpg`,
+  `${BASE_URL}wood_3.jpg`,
+  `${BASE_URL}wood_4.jpg`,
+  `${BASE_URL}wood_5.jpg`,
+  `${BASE_URL}wood_1.jpg`,
+  `${BASE_URL}wood_2.jpg`,
+  `${BASE_URL}wood_3.jpg`,
+  `${BASE_URL}wood_4.jpg`,
+  `${BASE_URL}wood_5.jpg`,
+  `${BASE_URL}wood_1.jpg`,
+  `${BASE_URL}wood_2.jpg`,
+  `${BASE_URL}wood_3.jpg`,
+  `${BASE_URL}wood_4.jpg`,
+  `${BASE_URL}wood_5.jpg`,
+  `${BASE_URL}wood_1.jpg`,
+  `${BASE_URL}wood_2.jpg`,
+  `${BASE_URL}wood_3.jpg`,
+  `${BASE_URL}wood_4.jpg`,
+  `${BASE_URL}wood_5.jpg`,
 ];
 
 function Works() {

@@ -3,7 +3,7 @@ import styles from './BannerWithLogo.module.css';
 
 function BannerWithLogo() {
   return (
-    <section className={styles.banner}>
+    <section className={styles.banner} id="about">
       <img
         className={styles.banner__logo}
         src={logoWhite}
