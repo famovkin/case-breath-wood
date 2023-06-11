@@ -1,12 +1,15 @@
 {
   "files": {
-    "main.css": "/case-breath-wood/static/css/main.822572f6.css",
-    "main.js": "/case-breath-wood/static/js/main.98da8521.js",
+    "main.css": "/case-breath-wood/static/css/main.6c6bb995.css",
+    "main.js": "/case-breath-wood/static/js/main.4fbb2bc4.js",
+    "static/media/wood-footer.png": "/case-breath-wood/static/media/wood-footer.ad8bb03d67b589f27829.png",
+    "static/media/feat3.png": "/case-breath-wood/static/media/feat3.43ce52487c445007a447.png",
+    "static/media/preview.jpg": "/case-breath-wood/static/media/preview.c34e25a93b51718a91d4.jpg",
+    "static/media/feat2.png": "/case-breath-wood/static/media/feat2.645a28b71a202befdb51.png",
+    "static/media/feat1.png": "/case-breath-wood/static/media/feat1.c5326663ecbe2e72bf98.png",
     "static/media/banner2.jpg": "/case-breath-wood/static/media/banner2.0dce1a5e07e1f5edd376.jpg",
     "static/media/banner.jpg": "/case-breath-wood/static/media/banner.73c0ddadcb802a8d6fd0.jpg",
-    "static/media/preview.jpg": "/case-breath-wood/static/media/preview.618e0d85f010cf1d5afa.jpg",
-    "static/media/feat3.png": "/case-breath-wood/static/media/feat3.de5798946fc1370bfb1c.png",
-    "static/media/feat2.png": "/case-breath-wood/static/media/feat2.097eb23b89c0b3d05e36.png",
+    "static/media/logo-white.png": "/case-breath-wood/static/media/logo-white.80e981cf9ad82e4d59cd.png",
     "static/media/Roboto-Medium.woff2": "/case-breath-wood/static/media/Roboto-Medium.6ae3b297b84ffbf68045.woff2",
     "static/media/Roboto-Black.woff2": "/case-breath-wood/static/media/Roboto-Black.72242b45a707c6e92cee.woff2",
     "static/media/Roboto-Regular.woff2": "/case-breath-wood/static/media/Roboto-Regular.5aed06c3c69cd1d41aa5.woff2",
@@ -15,15 +18,13 @@
     "static/media/Rubik-Bold.woff2": "/case-breath-wood/static/media/Rubik-Bold.15b537d9fdb84230fd6e.woff2",
     "static/media/Roboto-Thin.woff2": "/case-breath-wood/static/media/Roboto-Thin.ddc10f544e91a8db1e27.woff2",
     "static/media/Rubik-Medium.woff2": "/case-breath-wood/static/media/Rubik-Medium.b87db4c34be5f3bcbae4.woff2",
-    "static/media/feat1.png": "/case-breath-wood/static/media/feat1.357e64e547e982135016.png",
     "static/media/wood-circle.png": "/case-breath-wood/static/media/wood-circle.cfc40ea7928dc0343b57.png",
-    "static/media/logo-white.png": "/case-breath-wood/static/media/logo-white.488aa3e38eb3316f7ca1.png",
     "index.html": "/case-breath-wood/index.html",
-    "main.822572f6.css.map": "/case-breath-wood/static/css/main.822572f6.css.map",
-    "main.98da8521.js.map": "/case-breath-wood/static/js/main.98da8521.js.map"
+    "main.6c6bb995.css.map": "/case-breath-wood/static/css/main.6c6bb995.css.map",
+    "main.4fbb2bc4.js.map": "/case-breath-wood/static/js/main.4fbb2bc4.js.map"
   },
   "entrypoints": [
-    "static/css/main.822572f6.css",
-    "static/js/main.98da8521.js"
+    "static/css/main.6c6bb995.css",
+    "static/js/main.4fbb2bc4.js"
   ]
 }
