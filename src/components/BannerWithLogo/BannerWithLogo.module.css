@@ -2,12 +2,14 @@
   width: 100%;
   background-image: url('../../img/banner.jpg');
   background-position: center;
+  background-repeat: no-repeat;
   padding: 200px 85px;
   color: #fef9f2;
 }
 
 .banner__logo {
   margin-bottom: 20px;
+  width: 500px;
 }
 
 .banner__title {

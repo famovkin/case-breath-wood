@@ -20,4 +20,13 @@
   outline: none;
   border: none;
   border-bottom: 1px solid #9497a1;
+  transition: all 0.2s ease-in-out;
+}
+
+.input__field_invalid {
+  border-bottom: 1px solid red;
+}
+
+.input__field_loading {
+  color: gray;
 }

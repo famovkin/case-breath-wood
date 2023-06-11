@@ -6,14 +6,14 @@ import styles from './Feedback.module.css';
 import arrowLeft from '../../img/arrow-left.png';
 import arrowRight from '../../img/arrow-right.png';
 
-import Comment from '../Comment/Comment';
-import Title from '../Title/Title';
+import { Comment } from '../../components';
+import { Title } from '../ui/index';
 
-const BASE_URL = 'https://famovkin.github.io/case-breath-wood/';
+const publicUrl = process.env.PUBLIC_URL;
 
 const comments = [
   {
-    avatar: `${BASE_URL}/avatar_1.jpg`,
+    avatar: `${publicUrl}/avatar_1.jpg`,
     name: 'Евгений',
     text: `Заказывали в данной мастерской такую кроватку.
     </br>
@@ -24,7 +24,7 @@ const comments = [
   Еще раз большое спасибо!`,
   },
   {
-    avatar: `${BASE_URL}/avatar_2.jpg`,
+    avatar: `${publicUrl}/avatar_2.jpg`,
     name: 'Виктория',
     text: `Очень качественная кровать-домик, как раз подходит мне по размерам и габаритам. Кровать из натурального дерева, устойчивая и прочная.
     </br>
@@ -32,34 +32,37 @@ const comments = [
   Довольна покупкой, спасибо!`,
   },
   {
-    avatar: `${BASE_URL}/avatar_1.jpg`,
+    avatar: `${publicUrl}/avatar_1.jpg`,
     name: 'Евгений',
     text: `Заказывали в данной мастерской такую кроватку.
   Изготовление заняло примерно недели 3, но оно того стоило! качество очень хорошее, нам очень понравилось, все доходчиво объяснили, как если что разбирать и собирать, сборка и установка бесплатная. Однозначно рекомендую!
   Еще раз большое спасибо!`,
   },
   {
-    avatar: `${BASE_URL}/avatar_2.jpg`,
+    avatar: `${publicUrl}/avatar_2.jpg`,
     name: 'Виктория',
     text: `Очень качественная кровать-домик, как раз подходит мне по размерам и габаритам. Кровать из натурального дерева, устойчивая и прочная.
   Довольна покупкой, спасибо!`,
   },
   {
-    avatar: `${BASE_URL}/avatar_1.jpg`,
+    avatar: `${publicUrl}/avatar_1.jpg`,
     name: 'Евгений',
     text: `Заказывали в данной мастерской такую кроватку.
   Изготовление заняло примерно недели 3, но оно того стоило! качество очень хорошее, нам очень понравилось, все доходчиво объяснили, как если что разбирать и собирать, сборка и установка бесплатная. Однозначно рекомендую!
   Еще раз большое спасибо!`,
   },
   {
-    avatar: `${BASE_URL}/avatar_2.jpg`,
+    avatar: `${publicUrl}/avatar_2.jpg`,
     name: 'Виктория',
     text: `Очень качественная кровать-домик, как раз подходит мне по размерам и габаритам. Кровать из натурального дерева, устойчивая и прочная.
   Довольна покупкой, спасибо!`,
   },
 ];
 
+const GAP_WIDTH = 30;
+
 function Feedback() {
+  const [touchPosition, setTouchPosition] = useState(null);
   const [itemsInSlider, setItemsInSlider] = useState(2);
   const [sliderWidth, setSliderWidth] = useState(0);
   const [sliderIndex, setSliderIndex] = useState(0);
@@ -101,7 +104,7 @@ function Feedback() {
     }
 
     return (
-      (sliderWidth - (sliderWidth / itemsInSlider - 30) * itemsInSlider) /
+      (sliderWidth - (sliderWidth / itemsInSlider - GAP_WIDTH) * itemsInSlider) /
       (itemsInSlider - 1)
     );
   };
@@ -113,10 +116,62 @@ function Feedback() {
     return sliderIndex * (sliderWidth + Math.floor(getGapWidth()));
   };
 
+  const handleTouchStart = (e) => {
+    const touchDown = e.touches[0].clientX;
+    setTouchPosition(touchDown);
+  };
+
+  const handleTouchMove = (e) => {
+    const touchDown = touchPosition;
+
+    if (touchDown === null) {
+      return;
+    }
+
+    const currentTouch = e.touches[0].clientX;
+    const diff = touchDown - currentTouch;
+
+    if (diff > 5) {
+      if (sliderIndex < pages - 1) setSliderIndex((prev) => prev + 1);
+    }
+
+    if (diff < -5) {
+      if (sliderIndex !== 0) setSliderIndex((prev) => prev - 1);
+    }
+
+    setTouchPosition(null);
+  };
+
+  const handleClickStart = (e) => {
+    const clickX = e.clientX;
+    setTouchPosition(clickX);
+  };
+
+  const handleClickMove = (e) => {
+    const clickDown = touchPosition;
+
+    if (clickDown === null) {
+      return;
+    }
+
+    const currentClick = e.clientX;
+    const diff = clickDown - currentClick;
+
+    if (diff > 5) {
+      if (sliderIndex < pages - 1) setSliderIndex((prev) => prev + 1);
+    }
+
+    if (diff < -5) {
+      if (sliderIndex !== 0) setSliderIndex((prev) => prev - 1);
+    }
+
+    setTouchPosition(null);
+  };
+
   return (
     <section className={styles.feedback} id="feed">
       <div className={styles.feedback__header}>
-        <Title text="Отзывы о нас"/>
+        <Title text="Отзывы о нас" />
         <div className={styles.feedback__arrows}>
           <img
             className={cx(styles.feedback__arrow, {
@@ -140,7 +195,14 @@ function Feedback() {
           />
         </div>
       </div>
-      <div className={styles.slider} ref={sliderWrapper}>
+      <div
+        className={styles.slider}
+        ref={sliderWrapper}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onMouseDown={handleClickStart}
+        onMouseUp={handleClickMove}
+      >
         {pages && (
           <ul
             className={styles.slider__wrapper}
@@ -156,6 +218,7 @@ function Feedback() {
                 key={index}
                 width={sliderWidth}
                 itemsInSlider={itemsInSlider}
+                gap={GAP_WIDTH}
               />
             ))}
           </ul>

@@ -1,13 +1,19 @@
 import { useState, useEffect, useRef } from 'react';
 import cx from 'classnames';
 
-import Button from '../Button/Button';
+import { Button } from '../ui';
+import { WorkSliderItem } from '../../components';
 
 import styles from './Works.module.css';
 import preview from '../../img/preview.jpg';
-import WorkSliderItem from '../WorkSliderItem/WorkSliderItem';
 
 const BASE_URL = 'https://famovkin.github.io/case-breath-wood/';
+const GAP_WIDTH = 30;
+
+const goToAnchor = (idSection) => {
+  const section = document.getElementById(idSection);
+  if (section) section.scrollIntoView({ behavior: 'smooth' });
+};
 
 const workImages = [
   `${BASE_URL}wood_1.jpg`,
@@ -15,24 +21,25 @@ const workImages = [
   `${BASE_URL}wood_3.jpg`,
   `${BASE_URL}wood_4.jpg`,
   `${BASE_URL}wood_5.jpg`,
-  `${BASE_URL}wood_1.jpg`,
-  `${BASE_URL}wood_2.jpg`,
-  `${BASE_URL}wood_3.jpg`,
-  `${BASE_URL}wood_4.jpg`,
-  `${BASE_URL}wood_5.jpg`,
-  `${BASE_URL}wood_1.jpg`,
-  `${BASE_URL}wood_2.jpg`,
-  `${BASE_URL}wood_3.jpg`,
-  `${BASE_URL}wood_4.jpg`,
-  `${BASE_URL}wood_5.jpg`,
-  `${BASE_URL}wood_1.jpg`,
-  `${BASE_URL}wood_2.jpg`,
-  `${BASE_URL}wood_3.jpg`,
-  `${BASE_URL}wood_4.jpg`,
-  `${BASE_URL}wood_5.jpg`,
+  `${BASE_URL}wood_6.jpg`,
+  `${BASE_URL}wood_7.jpg`,
+  `${BASE_URL}wood_8.jpg`,
+  `${BASE_URL}wood_9.jpg`,
+  `${BASE_URL}wood_10.jpg`,
+  `${BASE_URL}wood_11.jpg`,
+  `${BASE_URL}wood_12.jpg`,
+  `${BASE_URL}wood_13.jpg`,
+  `${BASE_URL}wood_14.jpg`,
+  `${BASE_URL}wood_15.jpg`,
+  `${BASE_URL}wood_16.jpg`,
+  `${BASE_URL}wood_17.jpg`,
+  `${BASE_URL}wood_18.jpg`,
+  `${BASE_URL}wood_19.jpg`,
+  `${BASE_URL}wood_20.jpg`,
 ];
 
 function Works() {
+  const [touchPosition, setTouchPosition] = useState(null);
   const [itemsInSlider, setItemsInSlider] = useState(5);
   const [sliderWidth, setSliderWidth] = useState(0);
   const [sliderIndex, setSliderIndex] = useState(0);
@@ -46,7 +53,7 @@ function Works() {
 
   // useEffect(() => {
   //   console.log('pages', pages);
-  //   console.log(sliderIndex);
+  //   console.log('currPage', sliderIndex);
   // });
 
   // Первая инициализация
@@ -63,7 +70,7 @@ function Works() {
     }
 
     if (windowWidth < 1024) {
-      setItemsInSlider(3);
+      setItemsInSlider(4);
     }
     if (windowWidth < 768) {
       setItemsInSlider(2);
@@ -79,9 +86,61 @@ function Works() {
     return () => window.removeEventListener('resize', getSliderWidth);
   }, []);
 
+  const handleTouchStart = (e) => {
+    const touchDown = e.touches[0].clientX;
+    setTouchPosition(touchDown);
+  };
+
+  const handleTouchMove = (e) => {
+    const touchDown = touchPosition;
+
+    if (touchDown === null) {
+      return;
+    }
+
+    const currentTouch = e.touches[0].clientX;
+    const diff = touchDown - currentTouch;
+
+    if (diff > 5) {
+      if (sliderIndex < pages - 1) setSliderIndex((prev) => prev + 1);
+    }
+
+    if (diff < -5) {
+      if (sliderIndex !== 0) setSliderIndex((prev) => prev - 1);
+    }
+
+    setTouchPosition(null);
+  };
+
+  const handleClickStart = (e) => {
+    const clickX = e.clientX;
+    setTouchPosition(clickX);
+  };
+
+  const handleClickMove = (e) => {
+    const clickDown = touchPosition;
+
+    if (clickDown === null) {
+      return;
+    }
+
+    const currentClick = e.clientX;
+    const diff = clickDown - currentClick;
+
+    if (diff > 5) {
+      if (sliderIndex < pages - 1) setSliderIndex((prev) => prev + 1);
+    }
+
+    if (diff < -5) {
+      if (sliderIndex !== 0) setSliderIndex((prev) => prev - 1);
+    }
+
+    setTouchPosition(null);
+  };
+
   const getGapWidth = () => {
     return (
-      (sliderWidth - (sliderWidth / itemsInSlider - 30) * itemsInSlider) /
+      (sliderWidth - (sliderWidth / itemsInSlider - GAP_WIDTH) * itemsInSlider) /
       (itemsInSlider - 1)
     );
   };
@@ -103,10 +162,17 @@ function Works() {
           </div>
           <div className={styles.works__header}>
             <h2 className={styles.works__title}>Наши работы</h2>
-            <Button text="Оставить заявку" mod={styles.button_big} />
+            <Button text="Оставить заявку" mod={styles.button_big} handler={() => goToAnchor("contacts")}/>
           </div>
         </div>
-        <div className={styles.slider} ref={sliderWrapper}>
+        <div
+          className={styles.slider}
+          ref={sliderWrapper}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onMouseDown={handleClickStart}
+          onMouseUp={handleClickMove}
+        >
           <ul
             className={styles.slider__wrapper}
             style={{
@@ -120,6 +186,7 @@ function Works() {
                 img={work}
                 width={sliderWidth}
                 itemsInSlider={itemsInSlider}
+                gap={GAP_WIDTH}
               />
             ))}
           </ul>

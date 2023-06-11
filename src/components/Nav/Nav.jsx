@@ -1,7 +1,7 @@
 import cx from 'classnames';
 
-import Button from '../Button/Button';
-import NavItem from '../NavItem/NavItem';
+import { Button } from '../ui';
+import { NavItem } from '../../components';
 import styles from './Nav.module.css';
 
 const goToAnchor = (idSection) => {

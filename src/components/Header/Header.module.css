@@ -62,3 +62,23 @@
     display: none;
   }
 }
+
+
+@media (max-width: 1024px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__burger {
+    display: block;
+    transition: all 1s ease-in-out;
+  }
+
+  .header__burger_rotated {
+    transform: rotate(360deg);
+  }
+
+  .nav__phone {
+    margin-left: auto;
+  }
+}

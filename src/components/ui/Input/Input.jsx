@@ -10,6 +10,9 @@ function Input({
   mod,
   inputValue,
   inputHandler,
+  errors,
+  isLoading,
+  isErrorsVisible,
 }) {
   return (
     <div className={cx(styles.input, { [mod]: mod })}>
@@ -17,13 +20,18 @@ function Input({
         {labelTxt}
       </label>
       <input
-        className={styles.input__field}
+        className={cx(styles.input__field, {
+          [styles.input__field_invalid]:
+            errors.includes(inputName) && isErrorsVisible,
+          [styles.input__field_loading]: isLoading,
+        })}
         type={inputType}
         id={inputName}
         name={inputName}
         placeholder={placeholderTxt}
         value={inputValue}
         onChange={inputHandler}
+        readOnly={isLoading}
       />
     </div>
   );

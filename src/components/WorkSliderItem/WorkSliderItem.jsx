@@ -1,6 +1,6 @@
 import styles from './WorkSliderItem.module.css';
 
-function WorkSliderItem({ img, width, itemsInSlider }) {
+function WorkSliderItem({ img, width, itemsInSlider, gap }) {
   return (
     <li className={styles.itemSlider}>
       <div className={styles.itemSlider__container}>
@@ -9,8 +9,8 @@ function WorkSliderItem({ img, width, itemsInSlider }) {
           src={img}
           alt="Пример работы"
           style={{
-            width: width / itemsInSlider - 30,
-            height: width / itemsInSlider - 30,
+            width: width / itemsInSlider - gap,
+            height: width / itemsInSlider - gap,
           }}
         />
       </div>

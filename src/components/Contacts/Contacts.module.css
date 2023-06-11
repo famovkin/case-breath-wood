@@ -1,0 +1,28 @@
+.contacts {
+  width: 50%;
+}
+
+.contacts__title {
+  margin-bottom: 50px;
+}
+
+.contacts__bullit {
+  margin-bottom: 15px;
+}
+
+.contacts__txt {
+  color: #9497a1;
+  font-size: 20px;
+  margin-bottom: 45px;
+}
+
+.contacts__info {
+  font-size: 16px;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .contacts {
+    width: 100%;
+  }
+}

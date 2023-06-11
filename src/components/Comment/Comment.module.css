@@ -3,6 +3,10 @@
   box-shadow: 0px 12px 30px 17px rgba(24, 92, 255, 0.04);
   border-radius: 10px;
   padding: 35px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .comment__header {
@@ -16,6 +20,12 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .comment__name {

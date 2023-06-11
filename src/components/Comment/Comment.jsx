@@ -1,9 +1,11 @@
 import styles from './Comment.module.css';
 
-function Comment({ feedbackData, width, itemsInSlider }) {
+const GAP_WIDTH_MIN = 10;
+
+function Comment({ feedbackData, width, itemsInSlider, gap }) {
   const getCommentWidth = () => {
-    if (itemsInSlider === 1) return width - 10;
-    return width / itemsInSlider - 30;
+    if (itemsInSlider === 1) return width - GAP_WIDTH_MIN;
+    return width / itemsInSlider - gap;
   };
 
   const { avatar, name, text } = feedbackData;

@@ -1,5 +1,5 @@
-import styles from './Products.module.css';
 import bullWood from '../../img/wood-circle.png';
+import styles from './Products.module.css';
 
 function Products() {
   return (

@@ -1,8 +1,13 @@
 import cx from 'classnames';
 import styles from './Menu.module.css';
 
-import NavItem from '../NavItem/NavItem';
-import Button from '../Button/Button';
+import { NavItem } from '../../components';
+import { Button } from '../ui';
+
+const goToAnchor = (idSection) => {
+  const section = document.getElementById(idSection);
+  if (section) section.scrollIntoView({ behavior: 'smooth' });
+};
 
 const navItems = [
   { title: 'О нас', link: '#about' },
@@ -33,7 +38,11 @@ function Menu({ isMenuOpened, setIsMenuOpened }) {
         <a className={styles.menu__phone} href="tel:+79998887766">
           +7 (961) 252-18-19
         </a>
-        <Button mod={styles.menu__btn} text="Заказать звонок" />
+        <Button
+          mod={styles.menu__btn}
+          text="Заказать звонок"
+          handler={() => goToAnchor('contacts')}
+        />
       </div>
     </div>
   );
